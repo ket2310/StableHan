@@ -1,0 +1,15 @@
+{
+  "name": "stablehandapp",
+  "version": "1.0.0",
+  "description": "An application for managing English Riding Lessons at a riding school in Westchester county NY.",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run tests"
+  },
+  "author": "Kirk Evan Thomas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^6.6.5"
+  }
+}

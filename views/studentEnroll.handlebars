@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>New Rider Form</title>
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../public/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  </head>
+  <body>
+    <header class="cd-main-header text-center flex flex-column flex-center">
+      <h1 class="text-xl">
+        <%= farmName %>
+      </h1>
+      <br />
+      <h2 class="text-xl">
+        <%= title %>
+      </h2>
+      <a href="/" >Task Center</a>
+    </header>
+    <form action="/newRider/addNewStudent?source=hp" method="post">
+      <hr />
+      <div >
+        <label>First Name</label>
+        <input  name="firstName" type="text" />        
+        <br />
+        <label>Last Name</label>
+        <input  name="lastName" type="text" />
+        <br />
+        <label>Phone Number</label>
+        <input  name="phoneNumber" type="number" />
+        <br />
+        <label>Email Address</label>
+        <input  name="email" type="email" />
+        <br />
+        <label>Riding Frequency</label>
+        <input  name="frequency" type="text" />
+      </div>
+      <br/>
+      <div class="form-group">
+        <label>Participated in formal competition?  </label>
+        <input name="competition" type="checkbox" />
+      </div>
+      <div class="form-group">
+        <label>Interested in Lessons?</label>
+        <input name="lessons" type="checkbox" />
+      </div>
+      <div class="form-group">
+        <label>Showing?</label>
+        <input name="showing" type="checkbox" />
+      </div>
+      <div class="form-group">
+        <label>Jumping?</label>
+        <input name="jumping" type="checkbox" />
+      </div>
+      <div class="form-group">
+        <label>Trailriding?</label>
+        <input name="trailRide" type="checkbox" />
+      </div>
+      <div class="form-group">
+        <label>School Equestrian Program?</label>
+        <input name="schoolProgram" type="checkbox" />
+      </div>
+    
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </body>
+</html>

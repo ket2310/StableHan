@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
 
 class Rider extends Model { }
@@ -15,9 +14,35 @@ Rider.init(
 
         first_name: {
             type: DataTypes.STRING,
-            allowNull: false
-        }
+            allowNull: false,
+        },
 
+        last_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        phone: {
+            type: DataTypes.STRING,
+            allowNull: false,            
+        },
+
+        email: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+
+        riding_freq: {
+            type:DataTypes.STRING,
+            allowNull: true,
+        },
+
+        formal_comp: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        },
+
+        
     },
     
     {

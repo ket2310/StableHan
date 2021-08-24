@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
-class Horse extends Model {}
+class Horse extends Model { }
 
-Horse.init (
+Horse.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -19,29 +19,36 @@ Horse.init (
 
         lessonCount: {
             type: DataTypes.INTEGER,
-            allowNull: false,            
+            allowNull: false,
         },
-        lessonLimit:  {
+        lessonLimit: {
             type: DataTypes.INTEGER,
-            allowNull: false,            
+            allowNull: false,
         },
-        
+
         rider_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'rider',
                 key: 'id',
+                unique: false,
             },
         },
-
+        lesson_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'lesson',
+                key: 'id',
+                unique: false,
+            }
+        }
     },
-
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'blog',
+        modelName: 'horse',
     }
 );
 

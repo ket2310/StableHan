@@ -26,22 +26,6 @@ Horse.init(
             allowNull: false,
         },
 
-        rider_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'rider',
-                key: 'id',
-                unique: false,
-            },
-        },
-        lesson_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'lesson',
-                key: 'id',
-                unique: false,
-            }
-        }
     },
     {
         sequelize,

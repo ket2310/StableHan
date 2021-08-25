@@ -31,6 +31,13 @@ Lesson.init(
             },
         },
 
+        instructor_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'instructor',
+                key: 'id',
+            },
+        },
         
         horse_id: {
             type: DataTypes.INTEGER,

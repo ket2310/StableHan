@@ -15,12 +15,6 @@ Instructor.init (
             type: DataTypes.STRING,
             allowNull: true
         },
-        lesson_id: {
-            references: {
-                model: 'lesson',
-                key: 'id',
-            }
-        }
     },
     {
         sequelize,

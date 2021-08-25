@@ -13,14 +13,23 @@ Rider.belongsToMany(Horse, {
   as: 'rider_horse'
 });
 
-Location.belongsToMany(Traveller, {
+Horse.belongsToMany(Rider, {
   // Define the third table needed to store the foreign keys
   through: {
-    model: Trip,
+    model: Lesson,
     unique: false
   },
   // Define an alias for when data is retrieved
-  as: 'location_travellers'
+  as: 'horse_rider'
 });
 
-module.exports = { Traveller, Location, Trip };
+Instructor.hasMany(Lesson, {
+  foreignKey: 'instructor_id',
+  onDelete: 'CASCADE'
+})
+
+Lesson.belongsTo(Instructor, {
+  foreignKey: 'instructor_id'
+})
+
+module.exports = { Rider, Horse, Lesson, Instructor };

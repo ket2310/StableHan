@@ -1,16 +1,27 @@
-const viewSchedule  = () =>{
-    console.log("YOU ARE HERE!!!!!!!!!")
-    document.location.replace('/viewSchedule')
+const viewSchedule = () => {
+  console.log("YOU ARE HERE!!!!!!!!!")
+  document.location.replace('/viewSchedule')
 }
 
-const enrollStudent = () =>{
+const enrollStudent = () => {
   document.location.replace('/newStudent')
 }
 
+const listStudents = () => {
+  document.location.replace('/listOfStudents');
+}
+
+/////////////////////////////////////////////////////////////////////
+
 document
-  .querySelector('#vSchedule') 
+  .querySelector('#vSchedule')
   .addEventListener('click', viewSchedule);
 
 document
-  .querySelector('#vEnrollAStudent') 
+  .querySelector('#vEnrollAStudent')
   .addEventListener('click', enrollStudent);
+
+document
+  .querySelector('#vViewStudents')
+  .addEventListener('click', listStudents);
+

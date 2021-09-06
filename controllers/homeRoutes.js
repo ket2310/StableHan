@@ -2,15 +2,19 @@ const router = require('express').Router();
 const { Rider } = require('../models');
 const withAuth = require('../utils/auth');
 const farm = require('../models/Farm.json');
+const moment = require('moment')
 
-router.get('/', async (req, res) => {
+router.get('/homepage', async (req, res) => {
     farm.task = "Welcome to your Stable Hand!";
-    res.render('index', farm)
+    res.render('homepage', farm)
 });
 
 router.get('/viewSchedule', async (req, res ) =>{
-    farm.task = "Lesson Schedule for the Week of: ";
-    res.render('lessonScheduleView', farm);
+    var today = moment().startOf('month').day('Tuesday').format("dddd, MMMM Do")
+     farm.task = `Lesson Schedule for the Week of: ${today}`;
+      
+
+    res.render('wklyschedule', farm);
 });
 
 router.get('/newStudent', async (req, res) => {
